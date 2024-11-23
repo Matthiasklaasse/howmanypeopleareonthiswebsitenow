@@ -35,7 +35,7 @@ class MyWebSocketServer implements MessageComponentInterface {
     }
 }
 
-
-$app = new App('localhost', 8234, '0.0.0.0', 'path/to/certificate.pem', 'path/to/private-key.pem');
+// Bind the WebSocket server to 0.0.0.0 so it listens on all network interfaces
+$app = new App('0.0.0.0', 8234); // Replace localhost with 0.0.0.0 for all interfaces
 $app->route('/chat', new MyWebSocketServer, ['*']);
 $app->run();
