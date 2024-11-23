@@ -36,6 +36,6 @@ class MyWebSocketServer implements MessageComponentInterface {
 }
 
 
-$server = new App('localhost', 8234, '0.0.0.0');
+$app = new App('localhost', 8234, '0.0.0.0', 'path/to/certificate.pem', 'path/to/private-key.pem');
 $app->route('/chat', new MyWebSocketServer, ['*']);
 $app->run();
