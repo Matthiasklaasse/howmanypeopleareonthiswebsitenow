@@ -36,6 +36,6 @@ class MyWebSocketServer implements MessageComponentInterface {
 }
 
 
-$app = new App('localhost', 8234);  // Set WebSocket server to run on localhost:8080
+$server = new App('localhost', 8234, '0.0.0.0');
 $app->route('/chat', new MyWebSocketServer, ['*']);
 $app->run();
